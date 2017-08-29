@@ -1,0 +1,86 @@
+<html>
+  <head>
+
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Attended',     11],
+          ['Not Attended',    7]
+        ]);
+
+        var options = {
+          title: 'Attendance',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+   <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.arrayToDataTable([
+        ['Threat', 'Attacks'],
+        ['1st Nov', 22],
+        ['2nd Nov', 12],
+        ['3rd Nov', 6],
+        ['4th Nov', 24],
+        ['5th Nov', 28],
+        ['6th Nov', 18]
+      ]);
+
+      var options = {
+        legend: 'none',
+        colors: ['#760946'],
+        vAxis: { gridlines: { count: 4 } }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('line-chart'));
+      chart.draw(data, options);
+    }
+    </script>
+
+  </head>
+  <!-- <style >
+  	.chartWithOverlay {
+           position: relative;
+           width: 700px;
+    }
+    .overlay {
+           width: 200px;
+           height: 200px;
+           position: absolute;
+           top: 60px;   /* chartArea top  */
+           left: 180px; /* chartArea left */
+    }
+  </style> -->
+  <body>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+    <br><br>
+
+    <div class="chartWithOverlay">
+
+   <div id="line-chart" style="width: 700px; height: 500px;"></div>
+
+   <div class="overlay">
+    <div style="font-family:'Arial Black'; font-size: 128px;">88</div>
+    <div style="color: #b44; font-family:'Arial Black'; font-size: 32px; letter-spacing: .21em; margin-top:50px; margin-left:5px;">zombie</div>
+    <div style="color: #444; font-family:'Arial Black'; font-size: 32px; letter-spacing: .15em; margin-top:15px; margin-left:5px;">attacks</div>
+  </div>
+
+ </div>
+  </body>
+</html>
+

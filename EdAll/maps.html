@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<!--
+Template Name: Academic Education V2
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>Academic Education V2</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="clear"> 
+    <!-- ################################################################################################ -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="admin1.html">Admin Login</a></li>
+        <li><a href="student1.html">Student Login</a></li>
+        <li><a href="faculty.html">Staff Login</a></li>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+
+    <div id="logo" class="fl_left">
+      <h1><a href="index.html">EdAll</a></h1>
+      
+    </div>
+    <div class="fl_right">
+      <form class="clear" method="post" action="#">
+        <fieldset>
+          <legend>Search:</legend>
+          <input type="text" value="" placeholder="Search Here">
+          <button class="fa fa-search" type="submit" title="Search"><em>Search</em></button>
+        </fieldset>
+      </form>
+    </div>
+    <!-- ################################################################################################ --> 
+  </header>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <div class="rounded">
+    <nav id="mainav" class="clear"> 
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li ><a href="index.html">Home</a></li>
+        <li ><a href="gallery.html">Gallery</a></li>
+         <li><a href="vision.html">Vision</a></li>
+            <li><a href="history.html">History</a></li>
+        
+      </ul>
+      <!-- ################################################################################################ --> 
+    </nav>
+  </div>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <div class="rounded">
+    <main class="container clear"> 
+      <!-- main body --> 
+      <!-- ################################################################################################ -->
+      <h1>Google Map To Reach Us</h1>
+
+<div id="map" style="width:930px;height:600px;background:yellow"></div>
+
+<script>
+function myMap() {
+  var myCenter = new google.maps.LatLng(31.7772, 76.9888);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 5};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+  google.maps.event.addListener(marker,'click',function() {
+    var infowindow = new google.maps.InfoWindow({
+      content:"EdAll!"
+    });
+  infowindow.open(map,marker);
+  });
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+</center>
+        </figure>
+      </div>
+     
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+
+<!-- JAVASCRIPTS --> 
+<script src="../layout/scripts/jquery.min.js"></script> 
+<script src="../layout/scripts/jquery.fitvids.min.js"></script> 
+<script src="../layout/scripts/jquery.mobilemenu.js"></script> 
+<script src="../layout/scripts/nivo-lightbox/nivo-lightbox.min.js"></script>
+</body>
+</html>

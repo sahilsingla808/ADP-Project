@@ -1,0 +1,25 @@
+/*
+  function halt($msg) {
+    $this->errdesc=mysql_error();
+    $this->errno=mysql_errno();
+    // prints warning message when there is an error
+    global $technicalemail;
+    $message="Database error in $this->appname: $msg\n";
+    $message.="mysql error: $this->errdesc\n";
+    $message.="mysql error number: $this->errno\n";
+    $message.="Date: ".date("l dS of F Y h:i:s A")."\n";
+    $message.="Script: ".getenv("REQUEST_URI")."\n";
+    $message.="Referer: ".getenv("HTTP_REFERER")."\n";
+
+    //mail ($technicalemail,"$this->appshortname Database error!",$message);
+
+    if ($this->reporterror==1) {
+      echo "\n<!-- $message -->\n";
+
+      echo "</td></tr></table>\n<p>There seems to have been a slight problem with the database.\n";
+      echo "Please try again by pressing the refresh button in your browser.</p>";
+      echo "An E-Mail has been dispatched to our <a href=\"mailto:$technicalemail\">Technical Staff</a>, who you can also contact if the problem persists.</p>";
+      echo "<p>We apologise for any inconvenience.</p>";
+      die("");
+    }
+*/
