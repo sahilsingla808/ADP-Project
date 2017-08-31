@@ -1,0 +1,8 @@
+tp::proxy "http://10.7.0.1:8080/";
+Acquire::https::proxy "https://10.7.0.1:8080/";
+Acquire::ftp::proxy "ftp://10.7.0.1:8080/";Hello worldhello
+hello
+hello
+hello
+hello
+hello
