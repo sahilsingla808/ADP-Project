@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/menu.css" type="text/css">
+	<title>Alarm Clock</title>
+	<script>
+		var global_dt_alarm_sec=0;
+		function set_alarm()
+		{
+			var dt_alarm= new Date();
+			dt_alarm.setHours(parseInt(document.getElementById('Hours').value));
+			dt_alarm.setMinutes(parseInt(document.getElementById('Minutes').value));
+			dt_alarm.setSeconds(parseInt(document.getElementById('Seconds').value));
+			document.getElementById('we').innerHTML =dt_alarm;
+			global_dt_alarm_sec=dt_alarm.getTime();
+		}
+		function display_c()
+		{
+			var refresh=1000; // Refresh rate in milli seconds
+			mytime=setTimeout('display_ct()',refresh)
+		}
+		function display_ct() 
+		{
+			
+			var dt = new Date();
+			document.getElementById('demo').innerHTML =dt;
+			if((dt.getTime() >= global_dt_alarm_sec) && (global_dt_alarm_sec > 1000))
+			{
+				global_dt_alarm_sec=0;
+				window.location.assign(document.getElementById('link').value)
+			}
+			tt=display_c();
+		}
+	</script>
+</head>
+
+<style>
+	input{
+		width: 200px;
+		padding : 10px;
+		border: 2px solid gray;
+		text-shadow: 2px;
+	}
+	select{
+		width: 50px;
+		padding: 5px;
+		margin: 10px;
+	}
+	button{
+		width: 100px;
+		padding: 10px;
+	}
+</style>
+
+<body onload=display_ct();>
+	<h1>Alarm clock that will open <u>any</u> website</h1>
+]	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4">
+				<h3 >Current Time :</h3>
+				<br>
+				<h3>Set Alarm:</h3>
+				<br>
+				<h3>Set Alarm Action:</h3>
+				<br><br>
+				<h4>Alarm Set For:</h4>
+			</div >
+			<div class="col-sm-6"> 
+				<h3 id="demo"></h3>
+				<br>
+				Hours
+				<select name="Hours" id="Hours">
+					<script>
+					var count;
+					for (count =0; count <= 23; count++) 
+					{
+						if (count<10) {
+							document.write("<option value=0"+count+">0"+count+"</option>");
+						}
+						else
+							document.write("<option value="+count+">"+count+"</option>");		
+					}
+					</script>
+					</select>Minutes
+					<select name="Minutes" id="Minutes">
+					<script>
+					var count;
+					for (count =0; count <= 59; count++) 
+					{
+						if (count<10) {
+							document.write("<option value=0"+count+">0"+count+"</option>");
+						}
+						else
+							document.write("<option value="+count+">"+count+"</option>");		
+					}
+					</script>
+					</select>Seconds
+					<select name="Seconds" id="Seconds">
+					<script>
+					var count;
+					for (count =0; count <= 59; count++) 
+					{
+						if (count<10) {
+							document.write("<option value=0"+count+">0"+count+"</option>");
+						}
+						else
+							document.write("<option value="+count+">"+count+"</option>");		
+					}
+					</script>
+				</select>
+				<br><br><br>
+				<input type="text" placeholder="link" name="lin" id="link">
+				<p>Location Of Link Page</p>
+				<h5 id="we"></h5>
+			</div>
+		</div>
+	</div>
+	<br><br>
+	<img hspace="100px">
+	<button OnClick="set_alarm()">Set Alarm!</button>
+	<img hspace="100px">
+	<button style="display: inline;" type="reset">Reset</button>	
+	
+</body>
+</html>
